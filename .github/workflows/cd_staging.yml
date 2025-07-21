@@ -8,7 +8,7 @@ jobs:
     name: Deploying everything to the staging cluster
     steps:
       - run: |
-          echo ${{ secrets.SSH_PRIVATE_KEY }} &> ~/ssh_key
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
           ssh -i ~/ssh_key ubuntu@54.196.52.185
           cd devops-project && git pull
           pnpm install
