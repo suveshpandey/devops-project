@@ -8,6 +8,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("hi there.");
 })
+app.get("/health", (req, res) => {
+    res.send("the health of http-server is ok.");
+})
 app.post("/signup", async (req, res) => {
     const {username, password} = req.body;
     try {
